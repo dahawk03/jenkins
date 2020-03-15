@@ -11,8 +11,10 @@ pipeline {
     }
     stages {
         stage ("SSH to server") {
-            step {
-                sh 'ssh root@centmachine \'hostname\''
+            steps {
+                step {
+                    sh 'ssh root@centmachine \'hostname\''
+                }
             }
         }
     }
