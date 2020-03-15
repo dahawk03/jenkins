@@ -1,0 +1,19 @@
+#!groovy
+
+properties ([disableConcurrentBuilds()])
+
+pipeline {
+    agent {
+        label 'master'
+    }
+    options {
+        timestamps()
+    }
+    stages {
+        stage ("SSH to server") {
+            step {
+                sh 'ssh root@centmachine \'hostname\''
+            }
+        }
+    }
+}
